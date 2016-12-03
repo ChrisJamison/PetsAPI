@@ -1,0 +1,53 @@
+{
+	"id": "fb03fb92-6aae-c1f4-8360-990341c636b9",
+	"name": "PetsAPIv1.Live",
+	"description": "",
+	"order": [
+		"13095af4-03a5-8acc-c819-604dace16efa",
+		"65fae993-9762-344c-f130-9098afa9cef7"
+	],
+	"folders": [],
+	"timestamp": 1480690205977,
+	"owner": "441482",
+	"public": false,
+	"requests": [
+		{
+			"id": "13095af4-03a5-8acc-c819-604dace16efa",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://210.211.118.178/PetsAPI/api/userauthinfos",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1480690293865,
+			"name": "CreateUserAuthInfo",
+			"description": "",
+			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"phamngoclinh@gmail.com\",\n\t\"phone\": \"052512223\",\n\t\"firstName\": \"Linh\",\n\t\"lastName\": \"Huynh\",\n\t\"passwordHash\": \"e10adc3949ba59abbe56e057f20f883e\"\n}"
+		},
+		{
+			"id": "65fae993-9762-344c-f130-9098afa9cef7",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://210.211.118.178/PetsAPI/api/sessions/verify",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1480690266649,
+			"name": "VerifySession",
+			"description": "",
+			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
+			"responses": [],
+			"rawModeData": "{\n\t\"info\": \"huynhducdangkhoa@gmail.com\",\n\t\"passwordHash\": \"e10adc3949ba59abbe56e057f20f883e1\"\n}"
+		}
+	]
+}
