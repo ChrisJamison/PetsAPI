@@ -15,7 +15,9 @@
 		"58491808-b23d-ed44-dc03-6e04c2e5ba6b",
 		"1be29b16-c3d4-229d-68cd-38cbbb3a904a",
 		"883b22d0-8fb4-1415-998c-fcb0494798c8",
-		"2f55755e-9100-191c-0c0e-a485a5870ba7"
+		"2f55755e-9100-191c-0c0e-a485a5870ba7",
+		"0df90e92-2628-47f8-43f0-51ea7c81e5fb",
+		"e71d8e96-f583-0650-7b1d-e10df37350aa"
 	],
 	"folders": [],
 	"timestamp": 1480690205977,
@@ -40,6 +42,25 @@
 			"description": "",
 			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
 			"responses": []
+		},
+		{
+			"id": "0df90e92-2628-47f8-43f0-51ea7c81e5fb",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://210.211.118.178/PetsAPI/api/userauthinfos/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481956276096,
+			"name": "UpdateUserInfo",
+			"description": "",
+			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
+			"responses": [],
+			"rawModeData": "{ \n\t\"id\": 1,\n    \"email\": \"huynhducdangkhoa@gmail.com\",\n    \"phone\": \"09853641321\",\n    \"firstName\": \"Khoa\",\n    \"lastName\": \"Huynh\",\n    \"nationality\": \"VietNam\",\n    \"languages\": \"es\",\n    \"avatarThumbnail\": \"hat.jpg\",\n    \"coverThumbnail\": \"hat/jpg\",\n    \"createdOn\": \"1/1/2016\",\n    \"birthDate\": \"1/1/2016\",\n    \"LastConnectedOn\": \"1/1/2016\"\n}"
 		},
 		{
 			"id": "13095af4-03a5-8acc-c819-604dace16efa",
@@ -272,6 +293,24 @@
 			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
 			"responses": [],
 			"rawModeData": "{\r\n\t\"title\": \"Bán pet\",\r\n\t\"description\": \"Bán pet mới giá rẻ\",\r\n\t\"content\": \"Pet mới giá rẻ mại dô bà con, còn dễ thưn nữa\",\r\n\t\"price\": 10000,\r\n\t\"petId\": 2\r\n}\r\n"
+		},
+		{
+			"id": "e71d8e96-f583-0650-7b1d-e10df37350aa",
+			"headers": "",
+			"url": "http://210.211.118.178/PetsAPI/userauthinfos/1/petimages",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1481956283915,
+			"name": "GetUserPetImages",
+			"description": "",
+			"collectionId": "fb03fb92-6aae-c1f4-8360-990341c636b9",
+			"responses": []
 		}
 	]
 }
