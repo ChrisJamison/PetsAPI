@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetsAPI4DevConnectionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OTP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OTPCode" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserAuthInfoId" Type="Int32" Nullable="false" />
+    <Property Name="ExpiredOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserAuthInfo" Relationship="Self.FK_OTP_UserAuthInfo" FromRole="OTP" ToRole="UserAuthInfo" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserAuthInfoId" Type="Int32" Nullable="false" />
+    <Property Name="ExpiredOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DeviceToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+    <Property Name="DeviceType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserAuthInfo" Relationship="Self.FK_Session_UserAuthInfo" FromRole="Session" ToRole="UserAuthInfo" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Languages" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserAuthInfoes" Relationship="Self.FK_UserAuthInfo_User" FromRole="User" ToRole="UserAuthInfo" />
+    <Property Name="ProvinceId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="WardId" Type="Int32" />
+    <Property Name="AvatarThumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CoverThumbnail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="BirthDate" Type="DateTime" Precision="0" />
+    <Property Name="LastConnectedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UserAuthInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="OTPs" Relationship="Self.FK_OTP_UserAuthInfo" FromRole="UserAuthInfo" ToRole="OTP" />
+    <NavigationProperty Name="Sessions" Relationship="Self.FK_Session_UserAuthInfo" FromRole="UserAuthInfo" ToRole="Session" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserAuthInfo_User" FromRole="UserAuthInfo" ToRole="User" />
+    <NavigationProperty Name="Pets" Relationship="PetsAPI4DevConnectionModel.FK_Pet_UserAuthInfo" FromRole="UserAuthInfo" ToRole="Pet" />
+  </EntityType>
+  <Association Name="FK_OTP_UserAuthInfo">
+    <End Role="UserAuthInfo" Type="Self.UserAuthInfo" Multiplicity="1" />
+    <End Role="OTP" Type="Self.OTP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAuthInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OTP">
+        <PropertyRef Name="UserAuthInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_UserAuthInfo">
+    <End Role="UserAuthInfo" Type="Self.UserAuthInfo" Multiplicity="1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAuthInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="UserAuthInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAuthInfo_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserAuthInfo" Type="Self.UserAuthInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserAuthInfo">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetsAPI4DevConnectionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OTPs" EntityType="Self.OTP" />
+    <EntitySet Name="Sessions" EntityType="Self.Session" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserAuthInfoes" EntityType="Self.UserAuthInfo" />
+    <AssociationSet Name="FK_OTP_UserAuthInfo" Association="Self.FK_OTP_UserAuthInfo">
+      <End Role="UserAuthInfo" EntitySet="UserAuthInfoes" />
+      <End Role="OTP" EntitySet="OTPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_UserAuthInfo" Association="Self.FK_Session_UserAuthInfo">
+      <End Role="UserAuthInfo" EntitySet="UserAuthInfoes" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAuthInfo_User" Association="Self.FK_UserAuthInfo_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserAuthInfo" EntitySet="UserAuthInfoes" />
+    </AssociationSet>
+    <EntitySet Name="Articles" EntityType="PetsAPI4DevConnectionModel.Article" />
+    <EntitySet Name="Images" EntityType="PetsAPI4DevConnectionModel.Image" />
+    <EntitySet Name="Pets" EntityType="PetsAPI4DevConnectionModel.Pet" />
+    <AssociationSet Name="FK_Article_Pet" Association="PetsAPI4DevConnectionModel.FK_Article_Pet">
+      <End Role="Pet" EntitySet="Pets" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pet_Image" Association="PetsAPI4DevConnectionModel.FK_Pet_Image">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Pet" EntitySet="Pets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pet_UserAuthInfo" Association="PetsAPI4DevConnectionModel.FK_Pet_UserAuthInfo">
+      <End Role="UserAuthInfo" EntitySet="UserAuthInfoes" />
+      <End Role="Pet" EntitySet="Pets" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PetId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pet" Relationship="PetsAPI4DevConnectionModel.FK_Article_Pet" FromRole="Article" ToRole="Pet" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="View" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Thumbnail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pets" Relationship="PetsAPI4DevConnectionModel.FK_Pet_Image" FromRole="Image" ToRole="Pet" />
+  </EntityType>
+  <EntityType Name="Pet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="DateTime" Precision="0" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ImageId" Type="Int32" Nullable="false" />
+    <Property Name="UserAuthInfoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Articles" Relationship="PetsAPI4DevConnectionModel.FK_Article_Pet" FromRole="Pet" ToRole="Article" />
+    <NavigationProperty Name="Image" Relationship="PetsAPI4DevConnectionModel.FK_Pet_Image" FromRole="Pet" ToRole="Image" />
+    <NavigationProperty Name="UserAuthInfo" Relationship="PetsAPI4DevConnectionModel.FK_Pet_UserAuthInfo" FromRole="Pet" ToRole="UserAuthInfo" />
+  </EntityType>
+  <Association Name="FK_Article_Pet">
+    <End Type="PetsAPI4DevConnectionModel.Pet" Role="Pet" Multiplicity="1" />
+    <End Type="PetsAPI4DevConnectionModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="PetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pet_Image">
+    <End Type="PetsAPI4DevConnectionModel.Image" Role="Image" Multiplicity="1" />
+    <End Type="PetsAPI4DevConnectionModel.Pet" Role="Pet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pet">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pet_UserAuthInfo">
+    <End Type="PetsAPI4DevConnectionModel.UserAuthInfo" Role="UserAuthInfo" Multiplicity="1" />
+    <End Type="PetsAPI4DevConnectionModel.Pet" Role="Pet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAuthInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pet">
+        <PropertyRef Name="UserAuthInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,5 @@
+E:\Project\APS.NET MVC\PetsAPI\BusinessEntities\bin\Debug\BusinessEntities.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessEntities\bin\Debug\BusinessEntities.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessEntities\obj\Debug\BusinessEntities.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessEntities\obj\Debug\BusinessEntities.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache

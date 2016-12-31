@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetsAPI4DevConnectionModelStoreContainer" CdmEntityContainer="PetsAPI4DevConnectionEntities">
+    <EntitySetMapping Name="OTPs">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.OTP">
+        <MappingFragment StoreEntitySet="OTP">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OTPCode" ColumnName="OTPCode" />
+          <ScalarProperty Name="UserAuthInfoId" ColumnName="UserAuthInfoId" />
+          <ScalarProperty Name="ExpiredOn" ColumnName="ExpiredOn" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="UserAuthInfoId" ColumnName="UserAuthInfoId" />
+          <ScalarProperty Name="ExpiredOn" ColumnName="ExpiredOn" />
+          <ScalarProperty Name="DeviceToken" ColumnName="DeviceToken" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="LastConnectedOn" ColumnName="LastConnectedOn" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CoverThumbnail" ColumnName="CoverThumbnail" />
+          <ScalarProperty Name="AvatarThumbnail" ColumnName="AvatarThumbnail" />
+          <ScalarProperty Name="WardId" ColumnName="WardId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAuthInfoes">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.UserAuthInfo">
+        <MappingFragment StoreEntitySet="UserAuthInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.Article">
+        <MappingFragment StoreEntitySet="Article">
+          <ScalarProperty Name="View" ColumnName="View" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="PetId" ColumnName="PetId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pets">
+      <EntityTypeMapping TypeName="PetsAPI4DevConnectionModel.Pet">
+        <MappingFragment StoreEntitySet="Pet">
+          <ScalarProperty Name="UserAuthInfoId" ColumnName="UserAuthInfoId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

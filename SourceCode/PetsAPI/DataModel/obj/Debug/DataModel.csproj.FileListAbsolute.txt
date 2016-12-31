@@ -1,0 +1,10 @@
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\DataModel.dll.config
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\DataModel.dll
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\DataModel.pdb
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\EntityFramework.dll
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\EntityFramework.xml
+E:\Project\APS.NET MVC\PetsAPI\DataModel\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\APS.NET MVC\PetsAPI\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+E:\Project\APS.NET MVC\PetsAPI\DataModel\obj\Debug\DataModel.dll
+E:\Project\APS.NET MVC\PetsAPI\DataModel\obj\Debug\DataModel.pdb

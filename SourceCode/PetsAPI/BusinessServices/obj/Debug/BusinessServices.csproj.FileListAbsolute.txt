@@ -1,0 +1,16 @@
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\BusinessServices.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\BusinessServices.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\AutoMapper.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\AutoMapper.Net4.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\BusinessEntities.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\DataModel.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\EntityFramework.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\BusinessEntities.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\DataModel.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\AutoMapper.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\AutoMapper.xml
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\AutoMapper.Net4.pdb
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\bin\Debug\EntityFramework.xml
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\obj\Debug\BusinessServices.csprojResolveAssemblyReference.cache
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\obj\Debug\BusinessServices.dll
+E:\Project\APS.NET MVC\PetsAPI\BusinessServices\obj\Debug\BusinessServices.pdb

@@ -1,0 +1,5 @@
+E:\Project\APS.NET MVC\PetsAPI\MH.Utilities\bin\Debug\MH.Utilities.dll
+E:\Project\APS.NET MVC\PetsAPI\MH.Utilities\bin\Debug\MH.Utilities.pdb
+E:\Project\APS.NET MVC\PetsAPI\MH.Utilities\obj\Debug\MH.Utilities.csprojResolveAssemblyReference.cache
+E:\Project\APS.NET MVC\PetsAPI\MH.Utilities\obj\Debug\MH.Utilities.dll
+E:\Project\APS.NET MVC\PetsAPI\MH.Utilities\obj\Debug\MH.Utilities.pdb
